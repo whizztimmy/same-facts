@@ -1,0 +1,130 @@
+// Whop policy rules used by the checks. Summaries are paraphrased from Whop's public legal pages;
+// the linked page is the source of truth. Read on 12 Nov 2026.
+
+export const SOURCES = {
+  ToS: { name: 'Terms of Service', url: 'https://whop.com/tos/', updated: '9 Oct 2026' },
+  ST: { name: 'Seller Terms', url: 'https://whop.com/seller-terms/', updated: '14 Jul 2026' },
+  BT: { name: 'Buyer Terms', url: 'https://whop.com/buyer-terms/', updated: '15 May 2026' },
+  CG: { name: 'Community Guidelines', url: 'https://whop.com/guidelines/', updated: 'Read 12 Nov 2026' },
+  PP: { name: 'Prohibited Products & Services', url: 'https://whop.com/prohibited-products-and-services/', updated: 'Read 12 Nov 2026' },
+  ET: { name: 'Earnings Terms (Affiliates, Bounties)', url: 'https://whop.com/earnings-terms/', updated: 'Read 12 Nov 2026' },
+  CR: { name: 'Content Rewards Terms', url: 'https://whop.com/content-rewards-terms-of-service/', updated: 'Read 12 Nov 2026' }
+};
+
+export const POLICIES = [
+  // Terms of Service
+  { id: 'ToS-2', src: 'ToS', area: 'Eligibility', title: 'Who can use Whop',
+    text: 'Users must be at least 13 (with guardian approval under 18), and some services need 18+. Users confirm they are not barred from U.S. services by sanctions or export rules.' },
+  { id: 'ToS-3.1', src: 'ToS', area: 'Accounts', title: 'Linked payment accounts',
+    text: 'The owner of the first linked payment account is treated as the owner of the account\'s revenue, and only that owner can change or remove it. Whop does not mediate ownership or revenue disputes.' },
+  { id: 'ToS-3.2', src: 'ToS', area: 'Identity', title: 'KYC to receive payouts',
+    text: 'Receiving payments requires passing identity and compliance checks set by verification vendors and financial partners. Failing them, or a partner withdrawing approval, can block payouts or suspend the account.' },
+  { id: 'ToS-5', src: 'ToS', area: 'Conduct', title: 'Fraud and misuse',
+    text: 'Prohibited: impersonation, selling or transferring account access, chargeback fraud, misrepresenting products to buyers or financial partners, fake reviews, manipulating engagement or sales metrics, deceptive earnings claims, and peer-to-peer money transfers unrelated to a real purchase.' },
+  { id: 'ToS-10', src: 'ToS', area: 'Enforcement', title: 'Termination and funds',
+    text: 'Whop can suspend or terminate accounts for policy violations. Balances can be used to offset chargebacks, fees and damages; funds believed to come from fraud can be withheld. Terminated users may not open new accounts.' },
+  { id: 'ToS-17', src: 'ToS', area: 'Sanctions', title: 'Export and sanctions compliance',
+    text: 'Users must comply with U.S. and international export and sanctions law, must not be on a restricted party list, and must not use Whop from an embargoed country.' },
+
+  // Seller Terms
+  { id: 'ST-1', src: 'ST', area: 'Roles', title: 'Whop\'s role in a sale',
+    text: 'Whop is merchant of record for card-network and settlement purposes only. The seller supplies the product and owns its description, delivery, support and refund decisions.' },
+  { id: 'ST-3.1', src: 'ST', area: 'Listings', title: 'Accurate listings, no lifetime access',
+    text: 'Listings must be accurate and complete, with the access period, duration and delivery method shown at purchase. "Lifetime", perpetual or indefinite-access products are not allowed, and Whop can remove listings that break this.' },
+  { id: 'ST-3.2', src: 'ST', area: 'Listings', title: 'Seller identified as supplier',
+    text: 'Storefronts using Whop Payments must name the seller as supplier and must not present Whop as the seller.' },
+  { id: 'ST-5.1', src: 'ST', area: 'Disputes', title: 'Seller carries chargebacks',
+    text: 'Sellers are responsible for all chargebacks, disputes and refunds on their products, including fees. The chargeback fee is $15 per chargeback.' },
+  { id: 'ST-5.2', src: 'ST', area: 'Refunds', title: 'When Whop itself refunds',
+    text: 'Whop processes a refund only when: (i) the seller instructs it under their refund policy; (ii) Whop confirms a payment-layer issue such as a duplicate payment, processing error or unrecognised charge; (iii) Whop reasonably believes the payment came from fraud or unlawful activity; (iv) law or card-network rules require it; or (v) a chargeback looks imminent and a refund reduces that risk. Whop does not judge the merits of product complaints.' },
+  { id: 'ST-5.3', src: 'ST', area: 'Disputes', title: 'Dispute rate below 1%',
+    text: 'Sellers must keep their dispute rate below 1%, or a stricter network or partner threshold. Dispute rate = dispute cases divided by total transactions over a rolling 90 days.' },
+  { id: 'ST-5.4', src: 'ST', area: 'Disputes', title: 'Excessive chargebacks or refunds',
+    text: 'With excessive chargeback or refund rates, Whop may suspend sales, add checkout controls, share account information with financial partners and card networks, or terminate the account.' },
+  { id: 'ST-5.5', src: 'ST', area: 'Billing', title: 'Prohibited billing practices',
+    text: 'Not allowed: retrying a failed American Express authorization more than 3 times in 24 hours; charging nominal amounts to dilute the dispute rate; transaction splitting or micro-billing to evade monitoring.' },
+  { id: 'ST-5.6', src: 'ST', area: 'Reserves', title: 'Reserves and holds',
+    text: 'Reserves of up to 100% may be placed for: new accounts or no history; high dispute, chargeback or refund rates; certain categories, pre-orders or long fulfilment; unusual volume; fraud or policy indicators; incomplete verification. Funds may be held as long as commercially reasonable, but no longer than 180 days.' },
+  { id: 'ST-5.7', src: 'ST', area: 'Reserves', title: 'Information requests',
+    text: 'Sellers on reserve or suspension may be asked for more information. Not cooperating can extend the reserve or lead to suspension or termination.' },
+  { id: 'ST-5.8', src: 'ST', area: 'Disputes', title: 'Appeals',
+    text: 'Sellers can ask support to review a reserve or suspension. Whop may limit what it shares about its review.' },
+  { id: 'ST-7', src: 'ST', area: 'Enforcement', title: 'Immediate suspension',
+    text: 'Accounts can be suspended without notice for violations, suspected fraud or unauthorized use, or legal, regulatory or reputational reasons. Financial partners can also hold accounts.' },
+
+  // Buyer Terms
+  { id: 'BT-6', src: 'BT', area: 'Trials', title: 'Free trial limits',
+    text: 'Free trials may be limited to one per person, household or payment method, and Whop can deny trials where it suspects abuse.' },
+  { id: 'BT-7', src: 'BT', area: 'Accounts', title: 'No transfers of purchases',
+    text: 'Purchases and access rights cannot be moved to another account, for anti-fraud and AML reasons.' },
+  { id: 'BT-9.1', src: 'BT', area: 'Refunds', title: 'Payment-layer issues go to Whop',
+    text: 'Unrecognised charges, duplicate payments, processing errors and currency errors are handled by Whop. Confirmed issues are reversed to the original payment method, usually in 3 to 5 business days.' },
+  { id: 'BT-9.2', src: 'BT', area: 'Refunds', title: 'Product issues go to the seller',
+    text: 'Complaints about the product itself (not as described, no access, dissatisfaction, cancellation) go to the seller, whose refund policy governs. Whop processes the reversal when the seller approves.' },
+  { id: 'BT-9.3', src: 'BT', area: 'Refunds', title: 'EU, EEA and UK 14-day withdrawal',
+    text: 'Consumers in the EU, EEA and UK can withdraw within 14 days for a full refund. For digital content the right ends once access starts only if, at purchase, the buyer expressly agreed to immediate delivery and acknowledged losing the right. Without that acknowledgment the 14-day right applies even after access.' },
+  { id: 'BT-12', src: 'BT', area: 'Payments', title: 'Payment methods',
+    text: 'Buyers may not use payment methods they do not own or are not authorized to use, or give false payment information.' },
+
+  // Community Guidelines
+  { id: 'CG-1', src: 'CG', area: 'Conduct', title: 'Fraud, manipulation and payment abuse',
+    text: 'Prohibited: scams, phishing, pyramid schemes, misleading descriptions, fake reviews, false earnings claims, fake accounts, inflated engagement or sales metrics, ban evasion, payment fraud, chargeback abuse and money laundering.' },
+  { id: 'CG-2', src: 'CG', area: 'Reviews', title: 'Reviews',
+    text: 'Reviews must be honest and disclose any connection to the creator. Incentives may not be offered for fake reviews. Reviews with links, private information or spam are not approved.' },
+  { id: 'CG-3', src: 'CG', area: 'Claims', title: 'Earnings claims',
+    text: 'Income claims must not be misleading or imply atypical results are typical, must have a reasonable basis, must account for material expenses when quoting gross income, and testimonials must be typical or disclose context and typical earnings, in line with FTC guidance.' },
+  { id: 'CG-4', src: 'CG', area: 'Enforcement', title: 'Enforcement and appeals',
+    text: 'Actions include removing content, limiting access, suspension, withholding payouts, clawing back withdrawals and refunding customers. Users can appeal within 7 days of notification.' },
+
+  // Prohibited Products & Services
+  { id: 'PP-0', src: 'PP', area: 'Enforcement', title: 'Holds on suspended accounts',
+    text: 'Prohibited listings are removed and accounts can be suspended. Payments are typically withheld 90 days for investigation, up to 120 to 180 days where partners or law require. Customers may be refunded.' },
+  { id: 'PP-1', src: 'PP', area: 'Legal', title: 'Illegal products, sanctions and AML',
+    text: 'Nothing that breaks the law, including sanctions, anti-money-laundering and terrorist-financing laws.' },
+  { id: 'PP-2.1', src: 'PP', area: 'Prohibited', title: 'Accounts and fake engagement',
+    text: 'No sale of accounts on social media, gaming or other platforms, fake followers or likes or other artificial engagement, data-scraping tools, or hacking and phishing kits.' },
+  { id: 'PP-2.2', src: 'PP', area: 'Prohibited', title: 'Financial products',
+    text: 'No sale of crypto, NFTs or other digital currencies, staking, yield or cloud mining; no unregistered investment or asset management products; no lending, debt relief or credit repair; no pyramid schemes or recruitment-driven MLM. Education about these topics may be allowed if it involves no sale, exchange or investment solicitation.' },
+  { id: 'PP-2.3', src: 'PP', area: 'Prohibited', title: 'Gambling',
+    text: 'No betting platforms, lotteries or penny auctions that break the law. Picks, analysis and advisory content about betting is allowed.' },
+  { id: 'PP-2.4', src: 'PP', area: 'Prohibited', title: '"Lifetime access" offers',
+    text: 'Advertising lifetime access is prohibited. The access period must be disclosed.' },
+  { id: 'PP-2.5', src: 'PP', area: 'Prohibited', title: 'Health and regulated services',
+    text: 'No prescription drugs or supplements with unsubstantiated health claims, therapy or mental health services, IV treatments, or legal services.' },
+  { id: 'PP-2.6', src: 'PP', area: 'Prohibited', title: 'Infringing and pirated goods',
+    text: 'No counterfeits, game cheats or exploits, unofficial in-game currency, pirated content or unauthorized IPTV.' },
+  { id: 'PP-2.7', src: 'PP', area: 'Prohibited', title: 'Other prohibited categories',
+    text: 'Includes adult content, alcohol and tobacco, cannabis, weapons, academic fraud, fake government documents, ticket bot resale, timeshares, political and religious fundraising, and private investigation.' },
+  { id: 'PP-3', src: 'PP', area: 'Restricted', title: 'Restricted categories',
+    text: 'Some categories need prior approval, with proof of licensing and legal compliance.' },
+
+  // Earnings Terms
+  { id: 'ET-0', src: 'ET', area: 'Programs', title: 'Program eligibility',
+    text: 'Affiliates, bounties and Content Rewards require users to be 18+ with an account in good standing.' },
+  { id: 'ET-A', src: 'ET', area: 'Affiliates', title: 'Affiliate rules',
+    text: 'Affiliates must disclose commissions, follow FTC endorsement rules, and may not bid on "Whop" keywords in paid ads without approval. Commissions can be adjusted or withheld for fraud, abuse, refunds or chargebacks.' },
+  { id: 'ET-B', src: 'ET', area: 'Bounties', title: 'Bounty rules',
+    text: 'Every bounty must pay for a specific, legitimate task. Bounties cannot be gifts, prizes of chance, lotteries, raffles or peer-to-peer transfers. The seller defines the task and verifies completion.' },
+
+  // Content Rewards
+  { id: 'CR-1', src: 'CR', area: 'Offers', title: 'Offer funding and fee',
+    text: 'An offer sets a rate, a max payout and an end date. The seller must hold enough balance to cover the max payout plus Whop\'s fee, which is 10% of everything paid to participants.' },
+  { id: 'CR-2', src: 'CR', area: 'Submissions', title: 'Allowed reasons to reject',
+    text: 'A seller may reject a submission only if it misses the offer criteria, breaks the program terms, is reasonably suspected of fraud, or arrives after the max payout or end date. If the seller does not respond in time, Whop may decide.' },
+  { id: 'CR-3', src: 'CR', area: 'Submissions', title: 'No duplicate deliverables',
+    text: 'Each deliverable must be unique. Duplicates are prohibited.' },
+  { id: 'CR-4', src: 'CR', area: 'Payouts', title: 'Only legitimate views are paid',
+    text: 'Payment counts only legitimate views, as Whop determines. Views from bots, scripts or other automation, or from prizes, payments or other inducements to the public, are excluded.' },
+  { id: 'CR-5', src: 'CR', area: 'Payouts', title: 'Max payout and end date',
+    text: 'Nothing is paid for views after the max payout is reached or the end date passes, and submissions after either point are rejected.' },
+  { id: 'CR-6', src: 'CR', area: 'Payouts', title: 'All payment through Whop',
+    text: 'All compensation between sellers and participants must go through Whop. Paying or being paid off-platform can lead to suspension or termination.' },
+  { id: 'CR-7', src: 'CR', area: 'Disclosure', title: 'Sponsorship disclosure',
+    text: 'Participants must clearly disclose the paid relationship near the content, such as #Sponsored or #[Seller] Ad, visible before a viewer has to tap "more".' },
+  { id: 'CR-8', src: 'CR', area: 'Participants', title: 'Participant requirements',
+    text: 'Participants must be 18+, submit original work, and must not be a virtual influencer or bot.' },
+  { id: 'CR-9', src: 'CR', area: 'Enforcement', title: 'Withholding and clawback',
+    text: 'Breaking the terms can lead to immediate termination and withholding or clawback of payments.' }
+];
+
+export const policyById = id => POLICIES.find(p => p.id === id);
