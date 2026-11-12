@@ -81,7 +81,7 @@ h1{font:600 26px/1.15 var(--display);letter-spacing:-.025em}
 #dueWho{color:var(--ink);font-size:13.5px}
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 .stat{padding:12px 14px;display:grid;gap:4px;align-content:start}
-.stat b{font:500 20px/1.2 var(--display);letter-spacing:-.01em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.stat b{font:500 clamp(15px,1.5vw,20px)/1.2 var(--display);letter-spacing:-.01em;font-variant-numeric:tabular-nums;white-space:nowrap}
 .stat.hot b{color:var(--accent)}
 @media (prefers-reduced-motion:reduce){.due{transition:none}}
 
